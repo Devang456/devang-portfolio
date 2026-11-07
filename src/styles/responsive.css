@@ -1,0 +1,75 @@
+/* Comprehensive Responsive Breakpoints */
+
+/* Large Desktops (1440px+) */
+@media (min-width: 1440px) {
+  :root {
+    --container-max-width: 1280px;
+  }
+}
+
+/* Standard Desktops (1024px - 1280px) */
+@media (max-width: 1280px) {
+  :root {
+    --section-padding: 5.5rem 1.5rem;
+  }
+}
+
+/* Tablets and Laptops (769px - 1024px) */
+@media (max-width: 1024px) {
+  :root {
+    --section-padding: 4.5rem 1.25rem;
+  }
+
+  .nav-links {
+    gap: 1.15rem;
+  }
+}
+
+/* Mobile & Small Tablets (<= 768px) */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 3.75rem 1rem;
+    --nav-height: 4rem;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-toggle {
+    display: flex !important;
+  }
+
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .card {
+    padding: 1.35rem;
+  }
+}
+
+/* Small Smart Phones (<= 480px) */
+@media (max-width: 480px) {
+  :root {
+    --section-padding: 3.25rem 0.875rem;
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .card {
+    padding: 1.15rem;
+  }
+}
+
+/* Ultra Small Viewports (<= 360px) */
+@media (max-width: 360px) {
+  .btn {
+    padding: 0.55rem 0.9rem !important;
+    font-size: 0.85rem !important;
+  }
+}

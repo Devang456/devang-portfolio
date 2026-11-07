@@ -1,0 +1,216 @@
+.projects-section {
+  position: relative;
+}
+
+.projects-showcase-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+/* Primary Featured Project */
+.primary-project-card {
+  padding: 2.75rem;
+  background: var(--bg-card);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.8), 0 0 30px rgba(16, 185, 129, 0.1);
+  position: relative;
+}
+
+.primary-project-card:hover {
+  border-color: rgba(16, 185, 129, 0.45);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 45px rgba(16, 185, 129, 0.18);
+}
+
+.primary-project-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.project-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.15rem;
+  flex-wrap: wrap;
+}
+
+.flagship-chip {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-secondary);
+  background: rgba(6, 182, 212, 0.12);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+.primary-title {
+  font-size: 2.15rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.35rem;
+}
+
+.primary-subtitle {
+  font-size: 1.05rem;
+  color: var(--accent-primary);
+  font-weight: 600;
+  margin-bottom: 0.85rem;
+}
+
+.primary-tagline {
+  font-size: 0.98rem;
+  color: var(--text-primary);
+  font-style: italic;
+  margin-bottom: 1.15rem;
+  border-left: 2px solid var(--accent-primary);
+  padding-left: 0.75rem;
+}
+
+.primary-desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 1.35rem;
+}
+
+.project-feature-bullets {
+  margin-bottom: 1.5rem;
+  background: rgba(19, 27, 46, 0.5);
+  border: 1px solid var(--border-color);
+  padding: 1.15rem 1.35rem;
+  border-radius: var(--radius-md);
+}
+
+.bullet-title {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.bullets-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.bullets-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.bullets-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent-primary);
+  font-weight: bold;
+}
+
+.project-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.tech-tag {
+  font-size: 0.76rem;
+  font-family: var(--font-mono);
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+.primary-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.mockup-caption {
+  margin-top: 0.85rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.mockup-caption svg {
+  color: var(--accent-primary);
+}
+
+/* Secondary Project: InstantTalk */
+.secondary-project-card {
+  padding: 2.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.secondary-project-card:hover {
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 35px rgba(6, 182, 212, 0.15);
+}
+
+.secondary-project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .primary-project-grid,
+  .secondary-project-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .secondary-project-grid {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 640px) {
+  .primary-project-card,
+  .secondary-project-card {
+    padding: 1.5rem;
+  }
+
+  .primary-title {
+    font-size: 1.65rem;
+  }
+
+  .primary-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .primary-actions .btn {
+    width: 100%;
+  }
+}
