@@ -74,12 +74,11 @@
   line-height: 1.5;
   margin-bottom: 0.25rem;
   letter-spacing: 0.04em;
-  white-space: pre-wrap;
-  word-break: break-word;
+  white-space: pre;
 }
 
 .hero-name {
-  font-size: clamp(2.5rem, 5.5vw, 3.75rem);
+  font-size: 3.75rem;
   font-weight: 800;
   letter-spacing: -0.035em;
   line-height: 1.12;
@@ -88,12 +87,11 @@
   min-height: 4.25rem;
   display: inline-flex;
   align-items: center;
-  white-space: pre-wrap;
-  word-break: break-word;
+  white-space: pre;
 }
 
 .hero-title {
-  font-size: clamp(1.4rem, 3.5vw, 2.1rem);
+  font-size: 2.1rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.25;
@@ -101,8 +99,7 @@
   min-height: 2.75rem;
   display: inline-flex;
   align-items: center;
-  white-space: pre-wrap;
-  word-break: break-word;
+  white-space: pre;
 }
 
 /* Blinking Typewriter Cursor */
@@ -437,6 +434,13 @@
 @media (max-width: 768px) {
   .hero-section {
     padding: 3rem 0 2rem;
+  }
+
+  .hero-greeting,
+  .hero-name,
+  .hero-title {
+    white-space: pre-wrap;
+    word-break: break-word;
   }
 
   .floating-badge {
