@@ -132,8 +132,16 @@
   border-radius: var(--radius-lg);
 }
 
-.recruiter-icon {
-  font-size: 1.6rem;
+.recruiter-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: var(--accent-primary);
   flex-shrink: 0;
 }
 

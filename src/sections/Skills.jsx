@@ -64,7 +64,9 @@ export default function Skills() {
 
         {/* Verification Note */}
         <div className="skills-honest-banner">
-          <span className="banner-icon">💡</span>
+          <div className="banner-icon-box">
+            <Icon name="lightbulb" size={20} />
+          </div>
           <p className="banner-text">
             <strong>Honest Skill Policy:</strong> No artificial percentages or unverified technologies. Every tool listed is actively used in my production-deployed projects or repositories.
           </p>

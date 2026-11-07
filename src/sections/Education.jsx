@@ -6,20 +6,21 @@ import './Education.css';
 
 export default function Education() {
   const edu = timelineData.education[0];
+  const certs = timelineData.certifications || [];
 
   return (
     <section id="education" className="section education-section">
       <Container>
         <SectionHeading
-          badge="Formal Education"
-          title="Academic Credentials &"
-          gradientWord="Foundations"
-          description="Undergraduate degree in Computer Applications grounding full-stack development in core CS fundamentals."
+          badge="Formal Education & Credentials"
+          title="Academic Degree &"
+          gradientWord="Certifications"
+          description="Undergraduate degree in Computer Applications grounding full-stack development in core CS fundamentals alongside verified certifications."
         />
 
-        <div className="education-card-wrapper">
+        <div className="education-content-layout">
+          {/* Main Degree Card */}
           <div className="card education-card">
-            {/* Year & CGPA pill */}
             <div className="edu-top-row">
               <span className="edu-year-badge">
                 <Icon name="calendar" size={14} />
@@ -31,7 +32,6 @@ export default function Education() {
               </span>
             </div>
 
-            {/* University & Degree */}
             <div className="edu-main-row">
               <div className="edu-icon-circle">
                 <Icon name="graduationcap" size={28} />
@@ -46,7 +46,6 @@ export default function Education() {
               </div>
             </div>
 
-            {/* Core Coursework & Foundations */}
             <div className="edu-coursework-box">
               <span className="coursework-title">Computer Science Foundations & Coursework:</span>
               <p className="coursework-desc">{edu.highlights}</p>
@@ -60,6 +59,34 @@ export default function Education() {
               </div>
             </div>
           </div>
+
+          {/* Verified Certifications Card */}
+          {certs.length > 0 && (
+            <div className="card certifications-card">
+              <div className="cert-header">
+                <div className="cert-badge-box">
+                  <Icon name="check" size={20} />
+                </div>
+                <div>
+                  <h3 className="cert-heading">Professional Certifications</h3>
+                  <p className="cert-subheading">Verified technical credentials</p>
+                </div>
+              </div>
+
+              <div className="certs-list">
+                {certs.map((c, i) => (
+                  <div key={i} className="cert-item-row">
+                    <span className="cert-check-icon">✓</span>
+                    <div className="cert-meta">
+                      <h4 className="cert-title">{c.title}</h4>
+                      <p className="cert-issuer">Issued by {c.issuer}</p>
+                      <p className="cert-detail">{c.detail}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </Container>
     </section>

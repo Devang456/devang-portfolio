@@ -1,3 +1,4 @@
+import Icon from '../common/Icons';
 import './SolarMockup.css';
 
 export default function SolarMockup({ onOpenDetails }) {
@@ -11,7 +12,7 @@ export default function SolarMockup({ onOpenDetails }) {
           <span className="dot dot-green"></span>
         </div>
         <div className="browser-url-bar">
-          <span className="url-lock">🔒</span>
+          <span className="url-lock"><Icon name="lock" size={12} /></span>
           <span className="url-text">solar-management-system-liard.vercel.app</span>
         </div>
         <div className="browser-badge">
@@ -25,7 +26,7 @@ export default function SolarMockup({ onOpenDetails }) {
         {/* Dashboard Topbar */}
         <div className="mockup-topbar">
           <div className="mockup-brand">
-            <span className="brand-icon">☀️</span>
+            <span className="brand-icon"><Icon name="sun" size={16} /></span>
             <span className="brand-title">SolarOps Dashboard</span>
           </div>
           <div className="mockup-user-pill">

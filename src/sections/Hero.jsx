@@ -154,7 +154,9 @@ export default function Hero() {
 
               {/* Verified Fresher Developer Badge overlay */}
               <div className="photo-badge-chip">
-                <span className="chip-icon">🚀</span>
+                <div className="chip-icon-box">
+                  <Icon name="rocket" size={20} />
+                </div>
                 <div className="chip-text">
                   <span className="chip-primary">MERN Stack Developer</span>
                   <span className="chip-secondary">Fresher • Virtual Height Intern</span>

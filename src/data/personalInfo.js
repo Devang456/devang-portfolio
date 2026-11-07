@@ -8,7 +8,7 @@ export const personalInfo = {
   aboutFull: [
     "I'm Devang Parmar, a motivated and detail-oriented MERN Stack Developer based in Ahmedabad, Gujarat. Having completed my Bachelor of Computer Applications (BCA, CGPA: 7.11) from C. U. Shah University in 2025, I backed my computer science foundations with intensive 6-month MERN Stack technical training at Ahmedabad Computer Education.",
     "During my internship at Virtual Height IT Services, I worked across the stack: spearheading backend architecture, designing MongoDB schemas, and developing RESTful APIs with Node.js and Express. I also engineered dynamic React.js dashboard components and implemented secure JWT authentication with middleware for reliable client-server data flow.",
-    "From architecting real-time telemetry services for my deployed Solar Management System to building instant WebSocket messaging in InstantTalk, I focus on writing clean, scalable code. I am actively seeking a fresher MERN Stack Developer role or internship where I can contribute to production projects and grow as a software engineer."
+    "From architecting real-time telemetry services for my deployed Solar Management System to building instant WebSocket messaging in InstantTalk, I focus on writing clean, scalable code. I am actively seeking a fresher MERN Stack Developer role or intwhere I can contribute to production projects and grow as a software engineer."
   ],
   email: "devangparmar137@gmail.com",
   phone: "+91 9023036195",

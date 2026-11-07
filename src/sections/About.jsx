@@ -69,7 +69,9 @@ export default function About() {
 
             {/* Recruiter Callout */}
             <div className="recruiter-pill-card">
-              <span className="recruiter-icon">🎯</span>
+              <div className="recruiter-icon-box">
+                <Icon name="target" size={22} />
+              </div>
               <div className="recruiter-text">
                 <strong>Seeking Entry-Level / Junior MERN Roles</strong>
                 <p>Ready to join immediately and hit the ground running with modern workflows.</p>
