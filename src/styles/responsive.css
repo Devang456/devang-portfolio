@@ -1,4 +1,4 @@
-/* Comprehensive Responsive Breakpoints */
+/* Comprehensive Responsive Architecture */
 
 /* Large Desktops (1440px+) */
 @media (min-width: 1440px) {
@@ -10,7 +10,7 @@
 /* Standard Desktops (1024px - 1280px) */
 @media (max-width: 1280px) {
   :root {
-    --section-padding: 5.5rem 1.5rem;
+    --section-padding: 5rem 1.5rem;
   }
 }
 
@@ -28,7 +28,7 @@
 /* Mobile & Small Tablets (<= 768px) */
 @media (max-width: 768px) {
   :root {
-    --section-padding: 3.75rem 1rem;
+    --section-padding: 3.5rem 1rem;
     --nav-height: 4rem;
   }
 
@@ -48,28 +48,67 @@
   .card {
     padding: 1.35rem;
   }
+
+  /* Prevent unintentional horizontal scroll */
+  body, html {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+  }
 }
 
-/* Small Smart Phones (<= 480px) */
-@media (max-width: 480px) {
+/* Mobile Devices (<= 640px) */
+@media (max-width: 640px) {
   :root {
     --section-padding: 3.25rem 0.875rem;
   }
 
   .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1.15rem;
+    padding-right: 1.15rem;
+  }
+
+  /* Safe touch targets */
+  .btn {
+    min-height: 44px;
+  }
+}
+
+/* Small Smart Phones (<= 480px) */
+@media (max-width: 480px) {
+  :root {
+    --section-padding: 2.75rem 0.75rem;
+  }
+
+  .container {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
   }
 
   .card {
     padding: 1.15rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .section-heading {
+    margin-bottom: 2rem;
   }
 }
 
-/* Ultra Small Viewports (<= 360px) */
+/* Ultra Small Viewports (<= 360px - iPhone SE 1st gen, Galaxy Fold outer, etc.) */
 @media (max-width: 360px) {
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
   .btn {
-    padding: 0.55rem 0.9rem !important;
-    font-size: 0.85rem !important;
+    padding: 0.6rem 0.9rem !important;
+    font-size: 0.82rem !important;
+  }
+
+  .badge {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.6rem;
   }
 }

@@ -144,6 +144,33 @@
 @media (max-width: 868px) {
   .footer-top {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2.25rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .footer {
+    padding: 3rem 0 2rem;
+    margin-top: 3.5rem;
+  }
+
+  .footer-container {
+    gap: 2.25rem;
+  }
+
+  .footer-links-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.25rem;
+  }
+
+  .back-to-top-btn {
+    width: 100%;
+    justify-content: center;
   }
 }
