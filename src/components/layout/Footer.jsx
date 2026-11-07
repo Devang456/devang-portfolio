@@ -61,9 +61,12 @@ export default function Footer() {
                 <span>LinkedIn</span>
               </a>
               <a
-                href={`mailto:${personalInfo.email}`}
+                href={`https://mail.google.com/mail/?view=cm&fs=1&to=${personalInfo.email}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="footer-social-btn"
-                aria-label="Send Email"
+                aria-label="Send Email via Gmail"
+                title="Send Email via Gmail"
               >
                 <Icon name="mail" size={18} />
                 <span>Email</span>

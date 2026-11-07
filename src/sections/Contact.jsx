@@ -6,13 +6,35 @@ import Icon from '../components/common/Icons';
 import { personalInfo } from '../data/personalInfo';
 import './Contact.css';
 
+const MESSAGE_TEMPLATES = [
+  {
+    icon: 'briefcase',
+    label: 'Full-Time Role',
+    subject: 'MERN Stack Developer Opportunity - Interview Request',
+    message: 'Hi Devang, I reviewed your portfolio and Solar Management System. We have an open MERN Stack Developer role and would like to connect for an interview.'
+  },
+  {
+    icon: 'rocket',
+    label: 'Project / Freelance',
+    subject: 'Web Application Development Inquiry',
+    message: 'Hi Devang, I reviewed your developer portfolio and projects. We have a web application requirement and would like to discuss the scope and timeline with you.'
+  },
+  {
+    icon: 'message',
+    label: 'Quick Connect',
+    subject: 'Connecting via Developer Portfolio / Networking',
+    message: 'Hi Devang, I came across your developer portfolio and loved your work. I would love to connect with you on LinkedIn and stay in touch.'
+  }
+];
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: 'MERN Stack Opportunity / Interview Request',
-    message: 'Hi Devang, I reviewed your Solar Management System and developer portfolio, and I would like to discuss an opportunity with you.'
+    subject: MESSAGE_TEMPLATES[0].subject,
+    message: MESSAGE_TEMPLATES[0].message
   });
+  const [activeTemplate, setActiveTemplate] = useState(0);
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [copiedPhone, setCopiedPhone] = useState(false);
   const [copiedMessage, setCopiedMessage] = useState(false);
@@ -33,6 +55,15 @@ export default function Contact() {
     });
   };
 
+  const handleSelectTemplate = (index) => {
+    setActiveTemplate(index);
+    setFormData((prev) => ({
+      ...prev,
+      subject: MESSAGE_TEMPLATES[index].subject,
+      message: MESSAGE_TEMPLATES[index].message
+    }));
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -51,20 +82,12 @@ export default function Contact() {
     return { subject, body };
   };
 
-  // Launch directly in Gmail in browser (100% reliable)
-  const handleOpenGmail = (e) => {
+  // Launch email composer with pre-filled details
+  const handleSendMessage = (e) => {
     if (e) e.preventDefault();
     const { subject, body } = getEncodedMailData();
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${personalInfo.email}&su=${subject}&body=${body}`;
     window.open(gmailUrl, '_blank', 'noopener,noreferrer');
-    setLaunchedNotice(true);
-  };
-
-  // Launch in desktop email client (Outlook, Windows Mail, Apple Mail)
-  const handleOpenMailto = (e) => {
-    if (e) e.preventDefault();
-    const { subject, body } = getEncodedMailData();
-    window.location.href = `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
     setLaunchedNotice(true);
   };
 
@@ -75,7 +98,7 @@ export default function Contact() {
           badge="Direct Channels"
           title="Let's Build Something"
           gradientWord="Great Together."
-          description="I am actively seeking fresher MERN Stack Developer roles and internships. Feel free to reach out directly via email, phone, or LinkedIn."
+          description="I am actively seeking full-time fresher MERN Stack Developer roles. Feel free to reach out directly via email, phone, or LinkedIn."
         />
 
         <div className="contact-layout-grid">
@@ -85,7 +108,7 @@ export default function Contact() {
               <span>Get in Touch Directly</span>
             </h3>
             <p className="contact-col-intro">
-              Whether you have an open position, an internship opportunity, or want to review my code, I respond promptly.
+              Whether you have an open position, a project requirement, or want to review my code, I respond promptly.
             </p>
 
             <div className="contact-channels-list">
@@ -158,7 +181,7 @@ export default function Contact() {
                   className="social-pill-link"
                 >
                   <Icon name="github" size={16} />
-                  <span>GitHub (@Devang456)</span>
+                  <span>GitHub Profile</span>
                 </a>
                 <a
                   href={personalInfo.socialLinks[1].url}
@@ -179,20 +202,38 @@ export default function Contact() {
               <span>Send a Message</span>
             </h3>
             <p className="contact-col-intro">
-              Write your message below. Click <strong>&quot;Open &amp; Send in Gmail&quot;</strong> to instantly open Gmail in your browser with everything pre-filled!
+              Select a quick template or write your message below. Clicking <strong>&quot;Send Message&quot;</strong> opens your email composer with everything pre-filled!
             </p>
+
+            {/* Quick Template Selector Chips */}
+            <div className="template-chips-section">
+              <span className="template-label">Quick Templates:</span>
+              <div className="template-chips-row">
+                {MESSAGE_TEMPLATES.map((tmpl, idx) => (
+                  <button
+                    key={tmpl.label}
+                    type="button"
+                    className={`template-chip ${activeTemplate === idx ? 'active' : ''}`}
+                    onClick={() => handleSelectTemplate(idx)}
+                  >
+                    <Icon name={tmpl.icon} size={14} />
+                    <span>{tmpl.label}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
 
             {launchedNotice && (
               <div className="sent-notification-banner">
                 <span className="notif-icon">✓</span>
                 <div>
                   <strong>Email Composer Launched!</strong>
-                  <p>Your email service was opened with your message. You can also send directly to <code>{personalInfo.email}</code>.</p>
+                  <p>Your email service was opened with your message. You can also write directly to <code>{personalInfo.email}</code>.</p>
                 </div>
               </div>
             )}
 
-            <form onSubmit={handleOpenGmail} className="contact-form">
+            <form onSubmit={handleSendMessage} className="contact-form">
               <div className="form-row-2">
                 <div className="form-group">
                   <label htmlFor="contact-name" className="form-label">
@@ -205,7 +246,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     className="form-input"
-                    placeholder="Enter your name or company"
+                    placeholder="e.g. Recruiter / HR Manager"
                   />
                 </div>
 
@@ -220,7 +261,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     className="form-input"
-                    placeholder="Enter your email to get reply"
+                    placeholder="e.g. recruiter@company.com"
                   />
                 </div>
               </div>
@@ -256,28 +297,17 @@ export default function Contact() {
               </div>
 
               <div className="form-actions-row">
-                {/* 1. Primary: Direct Gmail in Browser */}
+                {/* 1. Primary: Direct Send Message */}
                 <Button
                   type="submit"
                   variant="primary"
                   size="md"
                   icon={<Icon name="mail" size={16} />}
                 >
-                  Open &amp; Send in Gmail
+                  Send Message
                 </Button>
 
-                {/* 2. Secondary: Desktop Email Client */}
-                <Button
-                  type="button"
-                  variant="secondary"
-                  size="md"
-                  onClick={handleOpenMailto}
-                  icon={<Icon name="externallink" size={14} />}
-                >
-                  Default Mail App (Outlook)
-                </Button>
-
-                {/* 3. Copy Formatted Message */}
+                {/* 2. Copy Formatted Message */}
                 <button
                   type="button"
                   className="copy-msg-btn"

@@ -88,19 +88,10 @@ export default function Hero() {
               variant="secondary"
               size="lg"
               target="_blank"
-              download="Devang_Parmar_Resume.pdf"
-              icon={<Icon name="download" size={16} />}
+              rel="noopener noreferrer"
+              icon={<Icon name="eye" size={16} />}
             >
-              Download Resume
-            </Button>
-
-            <Button
-              href="#contact"
-              variant="outline"
-              size="lg"
-              icon={<Icon name="mail" size={16} />}
-            >
-              Contact Me
+              View Resume
             </Button>
           </div>
 
@@ -127,9 +118,12 @@ export default function Hero() {
                 <Icon name="linkedin" size={20} />
               </a>
               <a
-                href={`mailto:${personalInfo.email}`}
+                href={`https://mail.google.com/mail/?view=cm&fs=1&to=${personalInfo.email}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="social-icon-btn"
-                aria-label="Send Devang Parmar an Email"
+                aria-label="Send Devang Parmar an Email via Gmail"
+                title="Send Email via Gmail"
               >
                 <Icon name="mail" size={20} />
               </a>
@@ -159,7 +153,7 @@ export default function Hero() {
                 </div>
                 <div className="chip-text">
                   <span className="chip-primary">MERN Stack Developer</span>
-                  <span className="chip-secondary">Fresher • Virtual Height Intern</span>
+                  <span className="chip-secondary">Fresher • Virtual Height Experience</span>
                 </div>
               </div>
             </div>

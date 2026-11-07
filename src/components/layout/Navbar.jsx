@@ -77,8 +77,7 @@ export default function Navbar() {
             size="sm"
             target="_blank"
             rel="noopener noreferrer"
-            download="Devang_Parmar_Resume.pdf"
-            icon={<Icon name="download" size={14} />}
+            icon={<Icon name="externallink" size={14} />}
           >
             Resume
           </Button>
@@ -124,11 +123,10 @@ export default function Navbar() {
                 size="md"
                 target="_blank"
                 rel="noopener noreferrer"
-                download="Devang_Parmar_Resume.pdf"
-                icon={<Icon name="download" size={16} />}
+                icon={<Icon name="externallink" size={16} />}
                 onClick={closeMenu}
               >
-                Download Resume
+                View Resume
               </Button>
             </div>
           </nav>
