@@ -7,6 +7,10 @@
   grid-template-columns: 1.25fr 0.95fr;
   gap: 2.25rem;
   align-items: start;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 /* Main Story Card */
@@ -15,6 +19,11 @@
   flex-direction: column;
   gap: 1.5rem;
   padding: 2.25rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .about-subheading {
@@ -160,7 +169,7 @@
 
 @media (max-width: 960px) {
   .about-content-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 1.75rem;
   }
 }

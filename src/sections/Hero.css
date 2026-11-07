@@ -12,6 +12,10 @@
   grid-template-columns: 1.15fr 0.85fr;
   gap: 3.5rem;
   align-items: center;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 /* Left Column */
@@ -19,6 +23,10 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .hero-status-pill {
@@ -394,7 +402,7 @@
 /* Responsive Scaling */
 @media (max-width: 1024px) {
   .hero-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 3rem;
     text-align: center;
   }
@@ -522,19 +530,24 @@
 
 @media (max-width: 380px) {
   .hero-name {
-    font-size: 1.9rem;
+    font-size: 1.85rem;
   }
 
   .hero-title {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 
   .hero-headline {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .hero-photo-wrapper {
-    max-width: 250px;
+    max-width: 230px;
+  }
+
+  .photo-ambient-glow {
+    width: 180px;
+    height: 180px;
   }
 
   .hero-socials {

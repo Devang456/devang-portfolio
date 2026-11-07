@@ -7,6 +7,10 @@
   grid-template-columns: 1fr 1.25fr;
   gap: 2.5rem;
   align-items: start;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .contact-cards-col,
@@ -14,6 +18,11 @@
   padding: 2.25rem;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .contact-col-heading {
@@ -366,7 +375,7 @@
 
 @media (max-width: 960px) {
   .contact-layout-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 2rem;
   }
 }

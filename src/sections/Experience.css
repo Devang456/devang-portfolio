@@ -7,7 +7,9 @@
   flex-direction: column;
   gap: 2.5rem;
   max-width: 900px;
+  width: 100%;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .timeline-card {
@@ -20,6 +22,11 @@
   gap: 1.25rem;
   position: relative;
   transition: all var(--transition-base);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .timeline-card:hover {

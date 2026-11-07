@@ -27,6 +27,8 @@
   letter-spacing: -0.03em;
   line-height: 1.2;
   margin-bottom: 1rem;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .section-description {
@@ -34,6 +36,8 @@
   color: var(--text-secondary);
   line-height: 1.65;
   font-weight: 400;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 @media (max-width: 768px) {
@@ -51,7 +55,22 @@
 }
 
 @media (max-width: 480px) {
+  .section-heading {
+    margin-bottom: 1.75rem;
+  }
+
   .section-title {
-    font-size: 1.75rem;
+    font-size: clamp(1.35rem, 6vw, 1.75rem);
+  }
+
+  .section-description {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+}
+
+@media (max-width: 360px) {
+  .section-title {
+    font-size: 1.25rem;
   }
 }
