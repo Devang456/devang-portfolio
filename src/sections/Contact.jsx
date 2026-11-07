@@ -10,21 +10,25 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
-    message: ''
+    subject: 'MERN Stack Opportunity / Interview Request',
+    message: 'Hi Devang, I reviewed your Solar Management System and developer portfolio, and I would like to discuss an opportunity with you.'
   });
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [copiedPhone, setCopiedPhone] = useState(false);
-  const [sentNotice, setSentNotice] = useState(false);
+  const [copiedMessage, setCopiedMessage] = useState(false);
+  const [launchedNotice, setLaunchedNotice] = useState(false);
 
   const handleCopy = (text, type) => {
     navigator.clipboard.writeText(text).then(() => {
       if (type === 'email') {
         setCopiedEmail(true);
         setTimeout(() => setCopiedEmail(false), 2500);
-      } else {
+      } else if (type === 'phone') {
         setCopiedPhone(true);
         setTimeout(() => setCopiedPhone(false), 2500);
+      } else if (type === 'message') {
+        setCopiedMessage(true);
+        setTimeout(() => setCopiedMessage(false), 2500);
       }
     });
   };
@@ -34,18 +38,34 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    const mailtoSubject = encodeURIComponent(
-      formData.subject ? `[Portfolio Inquiry] ${formData.subject}` : `[Portfolio Inquiry] Message from ${formData.name}`
+  const getEncodedMailData = () => {
+    const sender = formData.name.trim() || 'Recruiter / Hiring Manager';
+    const emailInfo = formData.email.trim() ? `\nReply-To: ${formData.email.trim()}` : '';
+    const subject = encodeURIComponent(
+      formData.subject.trim() || `[Portfolio Inquiry] Message from ${sender}`
     );
-    const mailtoBody = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    const body = encodeURIComponent(
+      `${formData.message.trim()}\n\n---\nSent by: ${sender}${emailInfo}\nSent via Devang Parmar Portfolio`
     );
 
-    // Open default mail client with pre-filled content
-    window.location.href = `mailto:${personalInfo.email}?subject=${mailtoSubject}&body=${mailtoBody}`;
-    setSentNotice(true);
+    return { subject, body };
+  };
+
+  // Launch directly in Gmail in browser (100% reliable)
+  const handleOpenGmail = (e) => {
+    if (e) e.preventDefault();
+    const { subject, body } = getEncodedMailData();
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${personalInfo.email}&su=${subject}&body=${body}`;
+    window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+    setLaunchedNotice(true);
+  };
+
+  // Launch in desktop email client (Outlook, Windows Mail, Apple Mail)
+  const handleOpenMailto = (e) => {
+    if (e) e.preventDefault();
+    const { subject, body } = getEncodedMailData();
+    window.location.href = `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
+    setLaunchedNotice(true);
   };
 
   return (
@@ -159,103 +179,114 @@ export default function Contact() {
               <span>Send a Message</span>
             </h3>
             <p className="contact-col-intro">
-              Compose a message below. Submitting will launch your default email client with your message pre-formatted.
+              Write your message below. Click <strong>&quot;Open &amp; Send in Gmail&quot;</strong> to instantly open Gmail in your browser with everything pre-filled!
             </p>
 
-            {sentNotice && (
+            {launchedNotice && (
               <div className="sent-notification-banner">
                 <span className="notif-icon">✓</span>
                 <div>
-                  <strong>Email Client Launched!</strong>
-                  <p>If your email client didn't open automatically, you can send an email directly to <code>{personalInfo.email}</code>.</p>
+                  <strong>Email Composer Launched!</strong>
+                  <p>Your email service was opened with your message. You can also send directly to <code>{personalInfo.email}</code>.</p>
                 </div>
               </div>
             )}
 
-            <form onSubmit={handleFormSubmit} className="contact-form">
+            <form onSubmit={handleOpenGmail} className="contact-form">
               <div className="form-row-2">
                 <div className="form-group">
                   <label htmlFor="contact-name" className="form-label">
-                    Your Name <span className="required">*</span>
+                    Your Name (Optional)
                   </label>
                   <input
                     type="text"
                     id="contact-name"
                     name="name"
-                    required
                     value={formData.name}
                     onChange={handleChange}
                     className="form-input"
-                    placeholder="e.g. John Doe / Recruiter Name"
+                    placeholder="Enter your name or company"
                   />
                 </div>
 
                 <div className="form-group">
                   <label htmlFor="contact-email" className="form-label">
-                    Your Email <span className="required">*</span>
+                    Your Email (Optional)
                   </label>
                   <input
                     type="email"
                     id="contact-email"
                     name="email"
-                    required
                     value={formData.email}
                     onChange={handleChange}
                     className="form-input"
-                    placeholder="john@company.com"
+                    placeholder="Enter your email to get reply"
                   />
                 </div>
               </div>
 
               <div className="form-group">
                 <label htmlFor="contact-subject" className="form-label">
-                  Subject <span className="required">*</span>
+                  Subject
                 </label>
                 <input
                   type="text"
                   id="contact-subject"
                   name="subject"
-                  required
                   value={formData.subject}
                   onChange={handleChange}
                   className="form-input"
-                  placeholder="MERN Stack Fresher Opportunity / Interview Request"
+                  placeholder="Subject of your message"
                 />
               </div>
 
               <div className="form-group">
                 <label htmlFor="contact-message" className="form-label">
-                  Message <span className="required">*</span>
+                  Message
                 </label>
                 <textarea
                   id="contact-message"
                   name="message"
                   rows="4"
-                  required
                   value={formData.message}
                   onChange={handleChange}
                   className="form-textarea"
-                  placeholder="Hi Devang, we reviewed your Solar Management System and portfolio, and we would like to discuss a fresher MERN role..."
+                  placeholder="Type your message here..."
                 ></textarea>
               </div>
 
               <div className="form-actions-row">
+                {/* 1. Primary: Direct Gmail in Browser */}
                 <Button
                   type="submit"
                   variant="primary"
                   size="md"
                   icon={<Icon name="mail" size={16} />}
                 >
-                  Send via Email Client
+                  Open &amp; Send in Gmail
                 </Button>
 
+                {/* 2. Secondary: Desktop Email Client */}
                 <Button
-                  href={`mailto:${personalInfo.email}`}
+                  type="button"
                   variant="secondary"
                   size="md"
+                  onClick={handleOpenMailto}
+                  icon={<Icon name="externallink" size={14} />}
                 >
-                  Quick Mailto Direct
+                  Default Mail App (Outlook)
                 </Button>
+
+                {/* 3. Copy Formatted Message */}
+                <button
+                  type="button"
+                  className="copy-msg-btn"
+                  onClick={() => handleCopy(formData.message, 'message')}
+                  title="Copy message to clipboard"
+                >
+                  <Icon name={copiedMessage ? 'check' : 'copy'} size={14} />
+                  <span>{copiedMessage ? 'Copied Message!' : 'Copy Message'}</span>
+                </button>
               </div>
             </form>
           </div>
