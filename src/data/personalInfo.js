@@ -4,11 +4,11 @@ export const personalInfo = {
   status: "Open to Fresher Roles & Internships",
   headline: "Building Digital Experiences That Make an Impact.",
   tagline: "Turning Ideas Into Modern Web Applications.",
-  aboutBrief: "I'm a passionate MERN Stack Developer and BCA graduate who enjoys building modern, responsive, and interactive web applications. I'm currently looking for opportunities to contribute, learn, and grow as a developer.",
+  aboutBrief: "I'm a motivated MERN Stack Developer and BCA graduate with hands-on internship experience at Virtual Height IT Services. I specialize in building scalable web applications with React.js, Node.js, Express, and MongoDB.",
   aboutFull: [
-    "I'm Devang Parmar, a fresher MERN Stack Developer based in Ahmedabad, Gujarat. I completed my Bachelor of Computer Applications (BCA) from C. U. Shah University in 2025 and completed 6 months of professional MERN Stack technical training at Ahmedabad Computer Education.",
-    "During my internship at Virtual Height, I gained practical hands-on experience building RESTful backend services with Node.js and Express, designing MongoDB database schemas, and developing dynamic user interfaces in React.js.",
-    "I enjoy building responsive web applications, exploring modern web technologies, and solving development challenges through practical projects. I am actively looking for a fresher full-stack developer role or internship where I can contribute to real-world products and continue growing as a software engineer."
+    "I'm Devang Parmar, a motivated and detail-oriented MERN Stack Developer based in Ahmedabad, Gujarat. Having completed my Bachelor of Computer Applications (BCA, CGPA: 7.11) from C. U. Shah University in 2025, I backed my computer science foundations with intensive 6-month MERN Stack technical training at Ahmedabad Computer Education.",
+    "During my internship at Virtual Height IT Services, I worked across the stack: spearheading backend architecture, designing MongoDB schemas, and developing RESTful APIs with Node.js and Express. I also engineered dynamic React.js dashboard components and implemented secure JWT authentication with middleware for reliable client-server data flow.",
+    "From architecting real-time telemetry services for my deployed Solar Management System to building instant WebSocket messaging in InstantTalk, I focus on writing clean, scalable code. I am actively seeking a fresher MERN Stack Developer role or internship where I can contribute to production projects and grow as a software engineer."
   ],
   email: "devangparmar137@gmail.com",
   phone: "+91 9023036195",
