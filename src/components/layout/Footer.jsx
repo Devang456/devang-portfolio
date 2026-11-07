@@ -14,14 +14,21 @@ export default function Footer() {
       <div className="container footer-container">
         <div className="footer-top">
           <div className="footer-brand-col">
-            <a href="#hero" className="footer-brand">
+            <a href="#hero" className="footer-brand" aria-label="Devang.dev Home">
               <span className="brand-code-symbol">&lt;</span>
-              <span className="brand-name">{personalInfo.name}</span>
+              <span className="brand-name">Devang</span>
               <span className="brand-dot">.dev</span>
               <span className="brand-code-symbol"> /&gt;</span>
             </a>
-            <p className="footer-role">{personalInfo.role}</p>
-            <p className="footer-status-tag">{personalInfo.status}</p>
+            <p className="footer-role">
+              <span className="footer-dev-name">{personalInfo.name}</span>
+              <span className="footer-dev-divider">•</span>
+              <span className="footer-dev-title">{personalInfo.role}</span>
+            </p>
+            <div className="footer-status-pill">
+              <span className="footer-status-dot"></span>
+              <span className="footer-status-text">{personalInfo.status}</span>
+            </div>
           </div>
 
           <div className="footer-nav-col">
