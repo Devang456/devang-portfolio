@@ -88,10 +88,17 @@ export default function SolarMockup({ onOpenDetails }) {
           </svg>
         </div>
 
-        {/* Quick Click Hint Overlay */}
+        {/* Quick Click Hint */}
         <div className="mockup-click-hint">
           <span>Click to Inspect Full Details</span>
         </div>
+      </div>
+
+      {/* Full Hover Overlay (matches InstantTalk 3D showcase) */}
+      <div className="browser-hover-overlay">
+        <span className="browser-hover-badge">
+          <Icon name="eye" size={14} /> View Details & Specs
+        </span>
       </div>
     </div>
   );
