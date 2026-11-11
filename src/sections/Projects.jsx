@@ -157,9 +157,6 @@ export default function Projects() {
                     <li>
                       <strong>Production Security & Persistence:</strong> JWT handshake authentication, OTP email verification, Google OAuth 2.0, and MongoDB message storage.
                     </li>
-                    <li>
-                      <strong>Fully Responsive & E2E Tested:</strong> Automated Playwright test suite covering 17 viewports from 320px mobile to 4K desktop with zero layout overflow.
-                    </li>
                   </ul>
                 </div>
 

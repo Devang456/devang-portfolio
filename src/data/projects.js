@@ -27,20 +27,19 @@ export const projects = [
     subtitle: "Real-Time Messaging, WebRTC Video Calling & Live Screen Monitoring Suite",
     tagline: "Instant real-time messaging, WebRTC P2P video calling, live screen broadcasting, and presence tracking.",
     description: "A full-stack real-time communication suite built with the MERN stack, Socket.io, and WebRTC for low-latency messaging, peer-to-peer audio/video calling, and live screen monitoring.",
-    longDescription: "InstantTalk is an enterprise-grade real-time communication suite built using the MERN stack. It leverages Socket.io for low-latency bidirectional messaging and presence tracking, alongside WebRTC mesh architecture for encrypted peer-to-peer voice/video calls and live screen broadcasting. Complete with JWT authentication, OTP verification, and automated Playwright E2E testing.",
-    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.io", "WebRTC", "Playwright", "CSS3"],
+    longDescription: "InstantTalk is an enterprise-grade real-time communication suite built using the MERN stack. It leverages Socket.io for low-latency bidirectional messaging and presence tracking, alongside WebRTC mesh architecture for encrypted peer-to-peer voice/video calls and live screen broadcasting. Complete with JWT authentication, OTP verification, and persistent MongoDB storage.",
+    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.io", "WebRTC", "CSS3"],
     featured: false,
     liveUrl: "https://instant-talk-six.vercel.app",
     githubUrl: "https://github.com/Devang456/InstantTalk",
     statusBadge: "Live Production Project",
     deploymentNotice: null,
     overview: "A modern, high-performance communication platform engineered for real-time messaging, WebRTC audio/video meetings, and encrypted screen broadcasting.",
-    problemSolved: "Replaces fragmented communication tools with an integrated MERN + WebRTC suite featuring instant event emission, real-time presence indicators, encrypted media streams, and verified multi-device responsiveness.",
+    problemSolved: "Replaces fragmented communication tools with an integrated MERN + WebRTC suite featuring instant event emission, real-time presence indicators, encrypted media streams, and production-grade security.",
     features: [
       "Low-Latency Messaging & Presence: Instant bidirectional messaging powered by Socket.io with typing indicators, online/offline presence, and read receipts.",
       "WebRTC Video Calls & Live Screen Monitoring: Peer-to-peer voice/video calling and encrypted real-time browser screen broadcasting.",
-      "Production Security & Persistence: JWT handshake authentication, OTP email verification, Google OAuth 2.0, and MongoDB message storage.",
-      "Fully Responsive & E2E Tested: Automated Playwright test suite covering 17 viewports from 320px mobile to 4K desktop with zero layout overflow."
+      "Production Security & Persistence: JWT handshake authentication, OTP email verification, Google OAuth 2.0, and MongoDB message storage."
     ]
   }
 ];
