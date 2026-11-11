@@ -11,6 +11,7 @@ import './Projects.css';
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [instantTalkView, setInstantTalkView] = useState('3d');
 
   const solarProject = projects.find((p) => p.id === 'solar-management-system') || projects[0];
   const instantTalkProject = projects.find((p) => p.id === 'instant-talk') || projects[1];
@@ -120,9 +121,56 @@ export default function Projects() {
           {/* SECOND PROJECT: InstantTalk */}
           <div className="card secondary-project-card">
             <div className="secondary-project-grid">
-              {/* Left Column: Chat Mockup */}
+              {/* Left Column: 3D Showcase & Chat Mockup */}
               <div className="secondary-project-mockup">
-                <ChatMockup onOpenDetails={() => handleOpenDetails(instantTalkProject)} />
+                <div className="mockup-tab-toggle" role="tablist" aria-label="InstantTalk preview mode">
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={instantTalkView === '3d'}
+                    className={`mockup-tab-btn ${instantTalkView === '3d' ? 'active' : ''}`}
+                    onClick={() => setInstantTalkView('3d')}
+                  >
+                    <Icon name="rocket" size={13} />
+                    <span>3D Showcase</span>
+                  </button>
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={instantTalkView === 'interactive'}
+                    className={`mockup-tab-btn ${instantTalkView === 'interactive' ? 'active' : ''}`}
+                    onClick={() => setInstantTalkView('interactive')}
+                  >
+                    <Icon name="chat" size={13} />
+                    <span>Interactive Chat</span>
+                  </button>
+                </div>
+
+                {instantTalkView === '3d' ? (
+                  <div
+                    className="product-3d-card"
+                    onClick={() => handleOpenDetails(instantTalkProject)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => e.key === 'Enter' && handleOpenDetails(instantTalkProject)}
+                    title="Click to view full project specifications"
+                  >
+                    <img
+                      src={instantTalkProject.image}
+                      alt="InstantTalk 3D Product Showcase Mockup"
+                      className="product-3d-img"
+                      loading="lazy"
+                    />
+                    <div className="product-3d-overlay">
+                      <span className="product-3d-badge">
+                        <Icon name="eye" size={14} /> View Details & Specs
+                      </span>
+                    </div>
+                  </div>
+                ) : (
+                  <ChatMockup onOpenDetails={() => handleOpenDetails(instantTalkProject)} />
+                )}
+
                 <p className="mockup-caption">
                   <Icon name="check" size={14} /> Production deployment verified on Vercel
                 </p>

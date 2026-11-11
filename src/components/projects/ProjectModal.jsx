@@ -49,6 +49,16 @@ export default function ProjectModal({ project, onClose }) {
 
         {/* Modal Scrollable Content */}
         <div className="modal-body">
+          {project.image && (
+            <div className="modal-showcase-banner">
+              <img
+                src={project.image}
+                alt={`${project.title} 3D Showcase Mockup`}
+                className="modal-showcase-img"
+              />
+            </div>
+          )}
+
           {/* Overview */}
           <div className="modal-section">
             <h3 className="modal-section-title">

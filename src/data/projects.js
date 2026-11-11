@@ -30,6 +30,7 @@ export const projects = [
     longDescription: "InstantTalk is an enterprise-grade real-time communication suite built using the MERN stack. It leverages Socket.io for low-latency bidirectional messaging and presence tracking, alongside WebRTC mesh architecture for encrypted peer-to-peer voice/video calls and live screen broadcasting. Complete with JWT authentication, OTP verification, and persistent MongoDB storage.",
     tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.io", "WebRTC", "CSS3"],
     featured: false,
+    image: "/projects/instanttalk-showcase.jpg",
     liveUrl: "https://instant-talk-six.vercel.app",
     githubUrl: "https://github.com/Devang456/InstantTalk",
     statusBadge: "Live Production Project",
