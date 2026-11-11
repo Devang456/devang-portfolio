@@ -24,24 +24,23 @@ export const projects = [
   {
     id: "instant-talk",
     title: "InstantTalk",
-    subtitle: "Real-Time One-to-One Communication & Messaging Application",
-    tagline: "Instant real-time messaging with WebSockets, typing indicators, and token-based authentication.",
-    description: "A full-stack real-time chat application built with the MERN stack and WebSockets for seamless one-to-one communication, presence tracking, and real-time messaging updates.",
-    longDescription: "InstantTalk is a modern real-time messaging platform built using the MERN stack. It leverages WebSockets for bidirectional instant message exchange and WebRTC architecture for low-latency peer communication, supported by secure authentication mechanisms and real-time user status notifications.",
-    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "JavaScript", "CSS3"],
+    subtitle: "Real-Time Messaging, WebRTC Video Calling & Live Screen Monitoring Suite",
+    tagline: "Instant real-time messaging, WebRTC P2P video calling, live screen broadcasting, and presence tracking.",
+    description: "A full-stack real-time communication suite built with the MERN stack, Socket.io, and WebRTC for low-latency messaging, peer-to-peer audio/video calling, and live screen monitoring.",
+    longDescription: "InstantTalk is an enterprise-grade real-time communication suite built using the MERN stack. It leverages Socket.io for low-latency bidirectional messaging and presence tracking, alongside WebRTC mesh architecture for encrypted peer-to-peer voice/video calls and live screen broadcasting. Complete with JWT authentication, OTP verification, and automated Playwright E2E testing.",
+    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.io", "WebRTC", "Playwright", "CSS3"],
     featured: false,
-    liveUrl: null, // Currently not deployed per instructions
+    liveUrl: "https://instant-talk-six.vercel.app",
     githubUrl: "https://github.com/Devang456/InstantTalk",
-    statusBadge: "GitHub Project • Active Codebase",
-    deploymentNotice: "Codebase available on GitHub. Deployment link will be added upon live release.",
-    overview: "A responsive, low-latency messaging platform built for direct one-to-one conversations with real-time feedback.",
-    problemSolved: "Enables instant peer-to-peer communication with minimal server latency, reliable message delivery tracking, and authenticated private conversations.",
+    statusBadge: "Live Production Project",
+    deploymentNotice: null,
+    overview: "A modern, high-performance communication platform engineered for real-time messaging, WebRTC audio/video meetings, and encrypted screen broadcasting.",
+    problemSolved: "Replaces fragmented communication tools with an integrated MERN + WebRTC suite featuring instant event emission, real-time presence indicators, encrypted media streams, and verified multi-device responsiveness.",
     features: [
-      "Engineered real-time one-to-one messaging flow powered by WebSockets for bidirectional event streaming.",
-      "Designed secure JWT-based user authentication and integrated Google authentication workflows.",
-      "Implemented live presence status indicators (online/offline) and real-time typing indicators.",
-      "Built message delivery and read receipt status tracking for transparent user communication.",
-      "Developed an intuitive, responsive chat interface designed with clean modular React components."
+      "Low-Latency Messaging & Presence: Instant bidirectional messaging powered by Socket.io with typing indicators, online/offline presence, and read receipts.",
+      "WebRTC Video Calls & Live Screen Monitoring: Peer-to-peer voice/video calling and encrypted real-time browser screen broadcasting.",
+      "Production Security & Persistence: JWT handshake authentication, OTP email verification, Google OAuth 2.0, and MongoDB message storage.",
+      "Fully Responsive & E2E Tested: Automated Playwright test suite covering 17 viewports from 320px mobile to 4K desktop with zero layout overflow."
     ]
   }
 ];

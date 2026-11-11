@@ -17,25 +17,25 @@ export default function ChatMockup({ onOpenDetails }) {
           </div>
           <div className="chat-meta">
             <span className="chat-room-title">InstantTalk Direct Channel</span>
-            <span className="chat-room-status">WebSocket Connected • Active</span>
+            <span className="chat-room-status">Socket.io & WebRTC • Live</span>
           </div>
         </div>
         <div className="chat-badge">
-          <span>REAL-TIME MERN</span>
+          <span>LIVE WEBRTC</span>
         </div>
       </div>
 
       <div className="chat-mockup-body">
         <div className="chat-message received">
           <p className="message-text">
-            Hey Devang! How is the real-time messaging pipeline structured?
+            Hey Devang! How are the WebRTC and Socket.io pipelines structured?
           </p>
           <span className="message-time">10:42 AM</span>
         </div>
 
         <div className="chat-message sent">
           <p className="message-text">
-            It leverages WebSockets for bidirectional event emission with JWT authentication on handshake and MongoDB message persistence!
+            Socket.io powers instant messaging and presence, while WebRTC handles P2P video/audio calls and live screen broadcasting with JWT security!
           </p>
           <div className="message-status">
             <span className="message-time">10:43 AM</span>

@@ -124,7 +124,7 @@ export default function Projects() {
               <div className="secondary-project-mockup">
                 <ChatMockup onOpenDetails={() => handleOpenDetails(instantTalkProject)} />
                 <p className="mockup-caption">
-                  <Icon name="git" size={14} /> Codebase available on GitHub • Ready for deployment
+                  <Icon name="check" size={14} /> Production deployment verified on Vercel
                 </p>
               </div>
 
@@ -146,11 +146,20 @@ export default function Projects() {
 
                 {/* Key Bullets */}
                 <div className="project-feature-bullets">
-                  <span className="bullet-title">Real-Time Capabilities:</span>
+                  <span className="bullet-title">Real-Time Capabilities & Architecture:</span>
                   <ul className="bullets-list">
-                    <li>Low-latency bidirectional messaging powered by WebSockets event loops.</li>
-                    <li>JWT token authentication with Google OAuth integrations.</li>
-                    <li>Live presence tracking, typing indicators, and message read receipts.</li>
+                    <li>
+                      <strong>Low-Latency Messaging & Presence:</strong> Instant bidirectional messaging powered by Socket.io with typing indicators, online/offline presence, and read receipts.
+                    </li>
+                    <li>
+                      <strong>WebRTC Video Calls & Live Screen Monitoring:</strong> Peer-to-peer voice/video calling and encrypted real-time browser screen broadcasting.
+                    </li>
+                    <li>
+                      <strong>Production Security & Persistence:</strong> JWT handshake authentication, OTP email verification, Google OAuth 2.0, and MongoDB message storage.
+                    </li>
+                    <li>
+                      <strong>Fully Responsive & E2E Tested:</strong> Automated Playwright test suite covering 17 viewports from 320px mobile to 4K desktop with zero layout overflow.
+                    </li>
                   </ul>
                 </div>
 
@@ -163,16 +172,27 @@ export default function Projects() {
                   ))}
                 </div>
 
-                {/* Action Buttons (Strictly NO fake live demo button) */}
+                {/* Action Buttons */}
                 <div className="primary-actions">
                   <Button
-                    href={instantTalkProject.githubUrl}
+                    href={instantTalkProject.liveUrl}
                     variant="primary"
+                    size="md"
+                    target="_blank"
+                    icon={<Icon name="externallink" size={16} />}
+                    iconPosition="right"
+                  >
+                    Launch Live Demo
+                  </Button>
+
+                  <Button
+                    href={instantTalkProject.githubUrl}
+                    variant="secondary"
                     size="md"
                     target="_blank"
                     icon={<Icon name="github" size={16} />}
                   >
-                    Explore GitHub Code
+                    GitHub Repository
                   </Button>
 
                   <Button
